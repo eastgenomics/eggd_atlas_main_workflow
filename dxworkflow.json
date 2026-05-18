@@ -4,8 +4,8 @@
   "summary": "Main workflow for atlas pipeline",
   "stages": [
     {
-      "id": "stage-sentieon_bwa",
-      "executable": "app-sentieon-bwa/5.1.0",
+      "id": "stage-sentieon_umi",
+      "executable": "app-eggd_sentieon_umi/1.0.0",
       "folder": "/sentieon_bam"
     },
     {
