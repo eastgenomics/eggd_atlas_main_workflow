@@ -1,7 +1,7 @@
 {
-  "name": "uranus_main_workflow_GRCh38_v3.4.0",
-  "title": "uranus_main_workflow_GRCh38_v3.4.0",
-  "summary": "Main workflow for Uranus pipeline",
+  "name": "atlas_main_workflow_GRCh38_v1.0.0",
+  "title": "atlas_main_workflow_GRCh38_v1.0.0",
+  "summary": "Main workflow for atlas pipeline",
   "stages": [
     {
       "id": "stage-sentieon_bwa",
