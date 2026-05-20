@@ -20,3 +20,7 @@ DNAnexus workflow for solid cancer pipeline based on the Uranus workflow.
 | eggd_vep                       | 1.3.0   |
 | eggd_vcf_rescue                | 1.2.0   |
 | eggd_generate_variant_workbook | 2.11.1  |
+
+## Workflow Diagram
+
+![Workflow Diagram](https://raw.githubusercontent.com/YOUR_ORG/YOUR_REPO/main/workflow_diagram.mmd)
