@@ -63,5 +63,5 @@ graph LR
   RESCUE --> GENWB
 
   %% Independent/standalone nodes
-  CNV
+
 ```
