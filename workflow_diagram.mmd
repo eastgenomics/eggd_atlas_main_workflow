@@ -10,7 +10,6 @@ graph LR
   ATH["stage-athena"]
   SEX["stage-sex_check"]
   SOMPY["stage-sompy"]
-  APH["stage-apheleia"]
   VN_MUT["stage-vcf_normaliser_mutect2"]
   VEP_MUT["stage-eggd_vep_mutect2"]
   RESCUE["stage-eggd_vcf_rescue"]
@@ -26,7 +25,6 @@ graph LR
   S_BWA --> FLAG
   S_BWA --> MOS
   MOS --> ATH
-  ATH --> APH
   S_BWA --> SEX
   S_TNBAM --> SOMPY
 
