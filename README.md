@@ -9,6 +9,7 @@ DNAnexus workflow for solid cancer pipeline based on the Uranus workflow.
 | ------------------------------ | ------- |
 | eggd_sentieon_umi              | 1.0.0   |
 | sentieon-tnbam                 | 5.1.0   |
+| cnvkit                         | 2.0.3   |
 | eggd_verifybamid               | 2.2.1   |
 | eggd_picard_QC                 | 1.3.0   |
 | eggd_samtools_flagstat         | 1.1.0   |

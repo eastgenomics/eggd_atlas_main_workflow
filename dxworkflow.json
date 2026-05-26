@@ -16,7 +16,7 @@
         "mappings_bam": {
           "$dnanexus_link": {
             "outputField": "mappings_bam",
-            "stage": "stage-sentieon_bwa"
+            "stage": "stage-sentieon_umi"
           }
         }
       }
@@ -29,7 +29,7 @@
         "case_bams": {
           "$dnanexus_link": {
             "outputField": "mappings_bam",
-            "stage": "stage-sentieon_bwa"
+            "stage": "stage-sentieon_umi"
           }
         }
       }
@@ -42,13 +42,13 @@
         "input_bam_index": {
           "$dnanexus_link": {
             "outputField": "mappings_bam_bai",
-            "stage": "stage-sentieon_bwa"
+            "stage": "stage-sentieon_umi"
           }
         },
         "input_bam": {
           "$dnanexus_link": {
             "outputField": "mappings_bam",
-            "stage": "stage-sentieon_bwa"
+            "stage": "stage-sentieon_umi"
           }
         }
       }
@@ -61,7 +61,7 @@
         "sorted_bam": {
           "$dnanexus_link": {
             "outputField": "mappings_bam",
-            "stage": "stage-sentieon_bwa"
+            "stage": "stage-sentieon_umi"
           }
         },
         "vcf": {
@@ -86,13 +86,13 @@
         "input_bam_index": {
           "$dnanexus_link": {
             "outputField": "mappings_bam_bai",
-            "stage": "stage-sentieon_bwa"
+            "stage": "stage-sentieon_umi"
           }
         },
         "input_bam": {
           "$dnanexus_link": {
             "outputField": "mappings_bam",
-            "stage": "stage-sentieon_bwa"
+            "stage": "stage-sentieon_umi"
           }
         }
       }
@@ -105,13 +105,13 @@
         "index": {
           "$dnanexus_link": {
             "outputField": "mappings_bam_bai",
-            "stage": "stage-sentieon_bwa"
+            "stage": "stage-sentieon_umi"
           }
         },
         "bam": {
           "$dnanexus_link": {
             "outputField": "mappings_bam",
-            "stage": "stage-sentieon_bwa"
+            "stage": "stage-sentieon_umi"
           }
         }
       }
@@ -138,13 +138,13 @@
       "input": {
         "input_bam": {
           "$dnanexus_link": {
-            "stage": "stage-sentieon_bwa",
+            "stage": "stage-sentieon_umi",
             "outputField": "mappings_bam"
           }
         },
         "index_file": {
           "$dnanexus_link": {
-            "stage": "stage-sentieon_bwa",
+            "stage": "stage-sentieon_umi",
             "outputField": "mappings_bam_bai"
           }
         }
