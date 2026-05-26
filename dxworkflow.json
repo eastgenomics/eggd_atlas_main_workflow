@@ -164,19 +164,6 @@
       }
     },
     {
-      "id": "stage-apheleia",
-      "executable": "app-eggd_apheleia/1.0.1",
-      "folder": "/eggd_apheleia",
-      "input": {
-        "exon_stats": {
-          "$dnanexus_link": {
-            "outputField": "exon_stats",
-            "stage": "stage-athena"
-          }
-        }
-      }
-    },
-    {
       "id": "stage-vcf_normaliser_mutect2",
       "executable": "app-eggd_vcf_normaliser/1.0.0",
       "folder": "/eggd_vcf_normaliser",

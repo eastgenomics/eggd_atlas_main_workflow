@@ -16,7 +16,6 @@ DNAnexus workflow for solid cancer pipeline based on the Uranus workflow.
 | eggd_athena                    | 1.4.0   |
 | eggd_sex_check                 | 1.1.0   |
 | eggd_sompy                     | 1.0.5   |
-| eggd_apheleia                  | 1.0.1   |
 | eggd_vep                       | 1.3.0   |
 | eggd_vcf_rescue                | 1.2.0   |
 | eggd_generate_variant_workbook | 2.11.1  |
@@ -36,7 +35,6 @@ graph LR
   ATH["stage-athena"]
   SEX["stage-sex_check"]
   SOMPY["stage-sompy"]
-  APH["stage-apheleia"]
   VN_MUT["stage-vcf_normaliser_mutect2"]
   VEP_MUT["stage-eggd_vep_mutect2"]
   RESCUE["stage-eggd_vcf_rescue"]
@@ -52,7 +50,6 @@ graph LR
   S_BWA --> FLAG
   S_BWA --> MOS
   MOS --> ATH
-  ATH --> APH
   S_BWA --> SEX
   S_TNBAM --> SOMPY
 
