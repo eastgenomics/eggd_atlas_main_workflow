@@ -37,7 +37,7 @@ graph LR
   SEX["stage-sex_check"]
   SOMPY["stage-sompy"]
   VN_MUT["stage-vcf_normaliser_mutect2"]
-  VEP_MUT["stage-eggd_vep_mutect2"]
+  VEP_MUT["stage-eggd_vep"]
   RESCUE["stage-eggd_vcf_rescue"]
   GENWB["stage-eggd_generate_variant_workbook"]
 
