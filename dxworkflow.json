@@ -36,8 +36,8 @@
     },
     {
       "id": "stage-verifybamid",
-      "executable": "app-eggd_verifybamid/2.2.1",
-      "folder": "/verifybamid_v2.2.1",
+      "executable": "app-eggd_verifybamid/2.3.0",
+      "folder": "/verifybamid_v2.3.0",
       "input": {
         "input_bam_index": {
           "$dnanexus_link": {
@@ -55,8 +55,8 @@
     },
     {
       "id": "stage-picard",
-      "executable": "app-eggd_picard_QC/1.3.0",
-      "folder": "/eggd_picardqc_v1.3.0",
+      "executable": "app-eggd_picard_QC/1.4.0",
+      "folder": "/eggd_picardqc_v1.4.0",
       "input": {
         "sorted_bam": {
           "$dnanexus_link": {
@@ -99,16 +99,16 @@
     },
     {
       "id": "stage-mosdepth",
-      "executable": "app-eggd_mosdepth/1.1.0",
-      "folder": "/eggd_mosdepth_v1.1.0",
+      "executable": "app-eggd_mosdepth/1.2.0",
+      "folder": "/eggd_mosdepth_v1.2.0",
       "input": {
-        "index": {
+        "alignment_index": {
           "$dnanexus_link": {
             "outputField": "mappings_bam_bai",
             "stage": "stage-sentieon_umi"
           }
         },
-        "bam": {
+        "alignment_file": {
           "$dnanexus_link": {
             "outputField": "mappings_bam",
             "stage": "stage-sentieon_umi"
@@ -118,8 +118,8 @@
     },
     {
       "id": "stage-athena",
-      "executable": "app-eggd_athena/1.4.0",
-      "folder": "/eggd_athena_v1.4.0",
+      "executable": "app-eggd_athena/1.6.2",
+      "folder": "/eggd_athena_v1.6.2",
       "input": {
         "mosdepth_files": [
           {
@@ -133,7 +133,7 @@
     },
     {
       "id": "stage-sex_check",
-      "executable": "app-eggd_sex_check/1.1.0",
+      "executable": "app-eggd_sex_check/1.2.1",
       "folder": "/eggd_sex_check",
       "input": {
         "input_bam": {
@@ -152,8 +152,8 @@
     },
     {
       "id": "stage-sompy",
-      "executable": "app-eggd_sompy/1.0.5",
-      "folder": "/eggd_sompy_v1.0.5",
+      "executable": "app-eggd_sompy/1.0.6",
+      "folder": "/eggd_sompy_v1.0.6",
       "input": {
         "query_vcf": {
           "$dnanexus_link": {
