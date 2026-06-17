@@ -22,19 +22,6 @@
       }
     },
     {
-      "id": "stage-cnvkit",
-      "executable": "app-cnvkit_batch/2.0.3",
-      "folder": "/cnvkit_v2.0.3",
-      "input": {
-        "case_bams": {
-          "$dnanexus_link": {
-            "outputField": "mappings_bam",
-            "stage": "stage-sentieon_umi"
-          }
-        }
-      }
-    },
-    {
       "id": "stage-verifybamid",
       "executable": "app-eggd_verifybamid/2.3.0",
       "folder": "/verifybamid_v2.3.0",
@@ -206,21 +193,6 @@
             "outputField": "annotated_vcf"
           }
         }
-      }
-    },
-    {
-      "id": "stage-eggd_generate_variant_workbook",
-      "executable": "app-eggd_generate_variant_workbook/2.11.1",
-      "folder": "/eggd_generate_variant_workbook",
-      "input": {
-        "vcfs": [
-          {
-            "$dnanexus_link": {
-              "stage": "stage-eggd_vcf_rescue",
-              "outputField": "output_vcf"
-            }
-          }
-        ]
       }
     }
   ]
