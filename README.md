@@ -1,5 +1,7 @@
 # eggd_atlas_main_workflow  (DNAnexus Platform Workflow)
-DNAnexus workflow for solid cancer pipeline based on the Uranus workflow.
+DNAnexus workflow for solid cancer pipeline (Atlas) for the Twist CGP assay.
+This is a DNAnexus workflow that implements the Atlas pipeline for solid cancer samples.
+The workflow is designed to process sequencing data generated from the Twist CGP assay, performing alignment, variant calling, and annotation for small variants and gather QC metrics.
 
 ---
 
