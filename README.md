@@ -9,7 +9,6 @@ DNAnexus workflow for solid cancer pipeline based on the Uranus workflow.
 | ------------------------------ | ------- |
 | eggd_sentieon_umi              | 1.0.0   |
 | sentieon-tnbam                 | 5.1.0   |
-| cnvkit                         | 2.0.3   |
 | eggd_verifybamid               | 2.3.0   |
 | eggd_picard_QC                 | 1.4.0   |
 | eggd_samtools_flagstat         | 1.1.0   |
@@ -19,7 +18,6 @@ DNAnexus workflow for solid cancer pipeline based on the Uranus workflow.
 | eggd_sompy                     | 1.0.6   |
 | eggd_vep                       | 1.3.0   |
 | eggd_vcf_rescue                | 1.2.0   |
-| eggd_generate_variant_workbook | 2.11.1  |
 
 ## Workflow Diagram
 
@@ -28,7 +26,6 @@ graph LR
   S_BWA["stage-sentieon_bwa"]
   S_UMI["stage-sentieon_umi"]
   S_TNBAM["stage-sentieon_tnbam"]
-  CNV["stage-cnvkit"]
   VERIFY["stage-verifybamid"]
   PICARD["stage-picard"]
   FLAG["stage-flagstat"]
@@ -39,12 +36,10 @@ graph LR
   VN_MUT["stage-vcf_normaliser_mutect2"]
   VEP_MUT["stage-eggd_vep"]
   RESCUE["stage-eggd_vcf_rescue"]
-  GENWB["stage-eggd_generate_variant_workbook"]
 
   %% Primary data flow edges (from JSON links)
   S_BWA --> S_TNBAM
   S_UMI --> S_BWA
-  S_BWA --> CNV
   S_BWA --> VERIFY
   S_BWA --> PICARD
   S_TNBAM --> PICARD
@@ -58,8 +53,6 @@ graph LR
   S_TNBAM --> VN_MUT
   VN_MUT --> VEP_MUT
   VEP_MUT --> RESCUE
-  RESCUE --> GENWB
 
-  %% Independent/standalone nodes
 
 ```
