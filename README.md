@@ -17,6 +17,7 @@ The workflow is designed to process sequencing data generated from the Twist CGP
 | eggd_athena                    | 1.6.2   |
 | eggd_sex_check                 | 1.2.1   |
 | eggd_sompy                     | 1.0.6   |
+| eggd_vcf_normaliser            | 1.0.0   |
 | eggd_vep                       | 1.3.0   |
 | eggd_vcf_rescue                | 1.2.0   |
 
@@ -33,8 +34,8 @@ graph LR
   ATH["stage-athena"]
   SEX["stage-sex_check"]
   SOMPY["stage-sompy"]
-  VN_MUT["stage-vcf_normaliser_mutect2"]
-  VEP_MUT["stage-eggd_vep_mutect2"]
+  VCF_NORM["stage-vcf_normaliser"]
+  VEP["stage-eggd_vep"]
   RESCUE["stage-eggd_vcf_rescue"]
 
   %% Primary data flow edges (from JSON links)
@@ -49,9 +50,9 @@ graph LR
   S_TNBAM --> SOMPY
 
   %% VCF normalization / annotation flow
-  S_TNBAM --> VN_MUT
-  VN_MUT --> VEP_MUT
-  VEP_MUT --> RESCUE
+  S_TNBAM --> VCF_NORM
+  VCF_NORM --> VEP
+  VEP --> RESCUE
 
 
 ```
