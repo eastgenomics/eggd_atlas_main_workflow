@@ -76,7 +76,7 @@
       }
     },
     {
-      "id": "stage-vcf_normaliser_mutect2",
+      "id": "stage-vcf_normaliser",
       "executable": "app-eggd_vcf_normaliser/1.0.0",
       "folder": "/eggd_vcf_normaliser",
       "input": {
@@ -95,7 +95,7 @@
       "input": {
         "vcf": {
           "$dnanexus_link": {
-            "stage": "stage-vcf_normaliser_mutect2",
+            "stage": "stage-vcf_normaliser",
             "outputField": "output_vcf"
           }
         }
