@@ -4,53 +4,20 @@
   "summary": "Main workflow for atlas pipeline",
   "stages": [
     {
-      "id": "stage-sentieon_umi",
-      "executable": "app-eggd_sentieon_umi/1.0.0",
-      "folder": "/sentieon_bam"
-    },
-    {
       "id": "stage-sentieon_tnbam",
       "executable": "app-sentieon-tnbam/5.1.0",
-      "folder": "/sentieon_vcfs",
-      "input": {
-        "mappings_bam": {
-          "$dnanexus_link": {
-            "outputField": "mappings_bam",
-            "stage": "stage-sentieon_umi"
-          }
-        }
-      }
+      "folder": "/sentieon_vcfs"
     },
     {
       "id": "stage-verifybamid",
       "executable": "app-eggd_verifybamid/2.3.0",
-      "folder": "/verifybamid_v2.3.0",
-      "input": {
-        "input_bam_index": {
-          "$dnanexus_link": {
-            "outputField": "mappings_bam_bai",
-            "stage": "stage-sentieon_umi"
-          }
-        },
-        "input_bam": {
-          "$dnanexus_link": {
-            "outputField": "mappings_bam",
-            "stage": "stage-sentieon_umi"
-          }
-        }
-      }
+      "folder": "/verifybamid_v2.3.0"
     },
     {
       "id": "stage-picard",
       "executable": "app-eggd_picard_QC/1.4.0",
       "folder": "/eggd_picardqc_v1.4.0",
       "input": {
-        "sorted_bam": {
-          "$dnanexus_link": {
-            "outputField": "mappings_bam",
-            "stage": "stage-sentieon_umi"
-          }
-        },
         "vcf": {
           "$dnanexus_link": {
             "stage": "stage-sentieon_tnbam",
@@ -68,40 +35,12 @@
     {
       "id": "stage-flagstat",
       "executable": "app-eggd_samtools_flagstat/1.1.0",
-      "folder": "/samtools_flagstat_v1.1.0",
-      "input": {
-        "input_bam_index": {
-          "$dnanexus_link": {
-            "outputField": "mappings_bam_bai",
-            "stage": "stage-sentieon_umi"
-          }
-        },
-        "input_bam": {
-          "$dnanexus_link": {
-            "outputField": "mappings_bam",
-            "stage": "stage-sentieon_umi"
-          }
-        }
-      }
+      "folder": "/samtools_flagstat_v1.1.0"
     },
     {
       "id": "stage-mosdepth",
       "executable": "app-eggd_mosdepth/1.2.0",
-      "folder": "/eggd_mosdepth_v1.2.0",
-      "input": {
-        "alignment_index": {
-          "$dnanexus_link": {
-            "outputField": "mappings_bam_bai",
-            "stage": "stage-sentieon_umi"
-          }
-        },
-        "alignment_file": {
-          "$dnanexus_link": {
-            "outputField": "mappings_bam",
-            "stage": "stage-sentieon_umi"
-          }
-        }
-      }
+      "folder": "/eggd_mosdepth_v1.2.0"
     },
     {
       "id": "stage-athena",
@@ -121,21 +60,7 @@
     {
       "id": "stage-sex_check",
       "executable": "app-eggd_sex_check/1.2.1",
-      "folder": "/eggd_sex_check",
-      "input": {
-        "input_bam": {
-          "$dnanexus_link": {
-            "stage": "stage-sentieon_umi",
-            "outputField": "mappings_bam"
-          }
-        },
-        "index_file": {
-          "$dnanexus_link": {
-            "stage": "stage-sentieon_umi",
-            "outputField": "mappings_bam_bai"
-          }
-        }
-      }
+      "folder": "/eggd_sex_check"
     },
     {
       "id": "stage-sompy",

@@ -1,6 +1,5 @@
 graph LR
-  S_BWA["stage-sentieon_bwa"]
-  S_UMI["stage-sentieon_umi"]
+  S_UMI["Seperate Sentieon UMI app launched by conductor"]
   S_TNBAM["stage-sentieon_tnbam"]
   CNV["stage-cnvkit"]
   VERIFY["stage-verifybamid"]
@@ -16,16 +15,15 @@ graph LR
   GENWB["stage-eggd_generate_variant_workbook"]
 
   %% Primary data flow edges (from JSON links)
-  S_BWA --> S_TNBAM
-  S_UMI --> S_BWA
-  S_BWA --> CNV
-  S_BWA --> VERIFY
-  S_BWA --> PICARD
+  S_UMI --> S_TNBAM
+  S_UMI --> CNV
+  S_UMI --> VERIFY
+  S_UMI --> PICARD
   S_TNBAM --> PICARD
-  S_BWA --> FLAG
-  S_BWA --> MOS
+  S_UMI --> FLAG
+  S_UMI --> MOS
   MOS --> ATH
-  S_BWA --> SEX
+  S_UMI --> SEX
   S_TNBAM --> SOMPY
 
   %% VCF normalization / annotation flow
