@@ -9,7 +9,6 @@ The workflow is designed to process sequencing data generated from the Twist CGP
 
 | App                            | Version |
 | ------------------------------ | ------- |
-| eggd_sentieon_umi              | 1.0.0   |
 | sentieon-tnbam                 | 5.1.0   |
 | eggd_verifybamid               | 2.3.0   |
 | eggd_picard_QC                 | 1.4.0   |
@@ -18,6 +17,7 @@ The workflow is designed to process sequencing data generated from the Twist CGP
 | eggd_athena                    | 1.6.2   |
 | eggd_sex_check                 | 1.2.1   |
 | eggd_sompy                     | 1.0.6   |
+| eggd_vcf_normaliser            | 1.0.0   |
 | eggd_vep                       | 1.3.0   |
 | eggd_vcf_rescue                | 1.2.0   |
 
@@ -25,8 +25,7 @@ The workflow is designed to process sequencing data generated from the Twist CGP
 
 ```mermaid
 graph LR
-  S_BWA["stage-sentieon_bwa"]
-  S_UMI["stage-sentieon_umi"]
+  S_UMI["Seperate Sentieon UMI app launched by conductor"]
   S_TNBAM["stage-sentieon_tnbam"]
   VERIFY["stage-verifybamid"]
   PICARD["stage-picard"]
@@ -35,26 +34,25 @@ graph LR
   ATH["stage-athena"]
   SEX["stage-sex_check"]
   SOMPY["stage-sompy"]
-  VN_MUT["stage-vcf_normaliser_mutect2"]
-  VEP_MUT["stage-eggd_vep"]
+  VCF_NORM["stage-vcf_normaliser"]
+  VEP["stage-eggd_vep"]
   RESCUE["stage-eggd_vcf_rescue"]
 
   %% Primary data flow edges (from JSON links)
-  S_BWA --> S_TNBAM
-  S_UMI --> S_BWA
-  S_BWA --> VERIFY
-  S_BWA --> PICARD
+  S_UMI --> S_TNBAM
+  S_UMI --> VERIFY
+  S_UMI --> PICARD
   S_TNBAM --> PICARD
-  S_BWA --> FLAG
-  S_BWA --> MOS
+  S_UMI --> FLAG
+  S_UMI --> MOS
   MOS --> ATH
-  S_BWA --> SEX
+  S_UMI --> SEX
   S_TNBAM --> SOMPY
 
   %% VCF normalization / annotation flow
-  S_TNBAM --> VN_MUT
-  VN_MUT --> VEP_MUT
-  VEP_MUT --> RESCUE
+  S_TNBAM --> VCF_NORM
+  VCF_NORM --> VEP
+  VEP --> RESCUE
 
 
 ```
