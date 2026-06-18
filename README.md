@@ -26,7 +26,6 @@ The workflow is designed to process sequencing data generated from the Twist CGP
 graph LR
   S_UMI["Seperate Sentieon UMI app launched by conductor"]
   S_TNBAM["stage-sentieon_tnbam"]
-  CNV["stage-cnvkit"]
   VERIFY["stage-verifybamid"]
   PICARD["stage-picard"]
   FLAG["stage-flagstat"]
@@ -37,11 +36,9 @@ graph LR
   VN_MUT["stage-vcf_normaliser_mutect2"]
   VEP_MUT["stage-eggd_vep_mutect2"]
   RESCUE["stage-eggd_vcf_rescue"]
-  GENWB["stage-eggd_generate_variant_workbook"]
 
   %% Primary data flow edges (from JSON links)
   S_UMI --> S_TNBAM
-  S_UMI --> CNV
   S_UMI --> VERIFY
   S_UMI --> PICARD
   S_TNBAM --> PICARD
@@ -55,9 +52,6 @@ graph LR
   S_TNBAM --> VN_MUT
   VN_MUT --> VEP_MUT
   VEP_MUT --> RESCUE
-  RESCUE --> GENWB
 
-  %% Independent/standalone nodes
-  CNV
 
 ```
