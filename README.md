@@ -19,7 +19,6 @@ The workflow is designed to process sequencing data generated from the Twist CGP
 | eggd_sompy                     | 1.0.5   |
 | eggd_vcf_normaliser            | 1.0.0   |
 | eggd_vep                       | 1.3.0   |
-| eggd_vcf_rescue                | 1.2.0   |
 
 ## Workflow Diagram
 
@@ -36,7 +35,6 @@ graph LR
   SOMPY["stage-sompy"]
   VCF_NORM["stage-vcf_normaliser"]
   VEP["stage-eggd_vep"]
-  RESCUE["stage-eggd_vcf_rescue"]
 
   %% Primary data flow edges (from JSON links)
   S_UMI --> S_TNBAM
@@ -52,7 +50,6 @@ graph LR
   %% VCF normalization / annotation flow
   S_TNBAM --> VCF_NORM
   VCF_NORM --> VEP
-  VEP --> RESCUE
 
 
 ```

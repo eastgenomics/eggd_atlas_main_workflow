@@ -100,25 +100,6 @@
           }
         }
       }
-    },
-    {
-      "id": "stage-eggd_vcf_rescue",
-      "executable": "app-eggd_vcf_rescue/1.2.0",
-      "folder": "/eggd_vcf_rescue",
-      "input": {
-        "filtered_vcf": {
-          "$dnanexus_link": {
-            "stage": "stage-eggd_vep",
-            "outputField": "annotated_vcf"
-          }
-        },
-        "unfiltered_vcf": {
-          "$dnanexus_link": {
-            "stage": "stage-eggd_vep",
-            "outputField": "annotated_vcf"
-          }
-        }
-      }
     }
   ]
 }
