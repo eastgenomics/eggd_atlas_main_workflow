@@ -19,7 +19,6 @@ The workflow is designed to process sequencing data generated from the Twist CGP
 | eggd_sompy                     | 1.0.5   |
 | eggd_vcf_normaliser            | 1.0.0   |
 | eggd_vep                       | 1.3.0   |
-| eggd_vcf_rescue                | 1.2.0   |
 
 ## Workflow Diagram
 
