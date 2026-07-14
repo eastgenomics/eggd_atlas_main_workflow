@@ -36,7 +36,6 @@ graph LR
   SOMPY["stage-sompy"]
   VCF_NORM["stage-vcf_normaliser"]
   VEP["stage-eggd_vep"]
-  RESCUE["stage-eggd_vcf_rescue"]
 
   %% Primary data flow edges (from JSON links)
   S_UMI --> S_TNBAM
@@ -52,7 +51,6 @@ graph LR
   %% VCF normalization / annotation flow
   S_TNBAM --> VCF_NORM
   VCF_NORM --> VEP
-  VEP --> RESCUE
 
 
 ```
